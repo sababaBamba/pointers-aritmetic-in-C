@@ -1,0 +1,1 @@
+# pointers-aritmetic-in-C
