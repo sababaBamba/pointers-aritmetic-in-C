@@ -1,52 +1,26 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main(void)
+{
+    int arraySum (int *ptr , const int n);
+    int values[10] = {3 , 7 , 9 , 3 , 6 , -1 , 7, 9 , 1 , 5};//should be 49
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("the sum is %i\n" , arraySum(values , 10));
 
-# Precompiled Headers
-*.gch
-*.pch
+    return 0;
+}
+int arraySum(int *ptr , const int n)
+{
+    int sum = 0;
+    int *const arrayEnd = ptr + n;//point to the end off the array
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    for (; ptr < arrayEnd; ++ptr) //ptr is an address and arrayEnd too//which mean that only when the address of the pointer will be less then the address of the array - the loop will end
+    {
+        sum += *ptr;
+    }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    return sum;
+}
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
